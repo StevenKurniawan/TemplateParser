@@ -13,7 +13,7 @@ Put the extracted downloaded file to htdocs folder
 
 ### Installing
 
-Put the Template_Parser,php to library folder and edit autoload file to:
+Put the Template_Parser.php to library folder and edit autoload file to:
 
 ```
 $autoload['libraries'] = array('template_parser');
