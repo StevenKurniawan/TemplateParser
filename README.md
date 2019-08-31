@@ -20,6 +20,7 @@ $autoload['libraries'] = array('template_parser');
 ```
 
 Create main view with brackets variable to change the value, eg:
+
 *The default path to the main view file is views/page/page.
 
 ```
@@ -41,6 +42,7 @@ Create main view with brackets variable to change the value, eg:
 ```
 
 Don't forget to inclue the base tag in the head tag so your assets could be loaded correctly.
+
 *it's important to set the base before loading another assets in the head tag and set the base_url path in the config.
 
 ```
@@ -51,10 +53,10 @@ To use the library in controller
 
 ```
 $config = [
-			'title' => 'Title',
-			'main' => $this->load->view("main", null, true),
-		];
-		$this->template_parser->load($config);
+	'title' => 'Title',
+	'main' => $this->load->view("main", null, true),
+];
+$this->template_parser->load($config);
 ```
 
 To custom the main view path, add the path to your view
