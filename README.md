@@ -49,7 +49,7 @@ Don't forget to inclue the base tag in the head tag so your assets could be load
 <base href="{base_url}">
 ```
 
-To use the library in controller
+Call the library in controller
 
 ```
 $config = [
@@ -59,10 +59,49 @@ $config = [
 $this->template_parser->load($config);
 ```
 
-To custom the main view path, add the path to your view
+Custom the main view path, add the path to your view
 
 ```
 $this->template_parser->load($config, your/path);
+```
+
+Load a html from a string
+
+```
+$html = '
+<table>
+	{row}
+		<tr>
+			{column}
+				<td>{value}</td>
+			{/column}
+		</tr>
+	{/row}
+</table>';
+$data = [
+	"row" => [
+		[
+			"column" => [
+				["value" => "1st"],
+				["value" => "2nd"],
+				["value" => "3rd"],
+			],
+		],
+	],
+];
+$result = $this->template_parser->load_with_string($html, $data);
+```
+
+Load data from a view and pass the result to another view
+
+```
+$config = [
+	'main' => $this->template_parser->load_data([
+		"data" => $result
+	], "main"),
+	"data" => $this->template_parser->load_with_string($html, $data)
+];
+$this->template_parser->load($config, "page/page");
 ```
 
 To see the example app, put the exampleApp folder to your htdocs folder and run with your localhost_url/exampleapp
