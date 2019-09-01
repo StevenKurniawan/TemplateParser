@@ -1,1 +1,2 @@
-<div style="background-color: blue;">asdasd</div>
+<div style="background-color: blue;">main view</div>
+{data}

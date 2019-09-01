@@ -9,8 +9,10 @@
 </head>
 <body>
     {main}
-    <div style="background-color: red;">asdasd</div>
-    {footer}
-    {script}
+    <br>
+    <div>
+        table:
+        {data}
+    </div>
 </body>
 </html>
