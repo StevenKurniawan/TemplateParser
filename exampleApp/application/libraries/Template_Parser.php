@@ -42,8 +42,8 @@ class Template_Parser {
         $this->instance->parser->parse($view, $data);
     }
 
-    function load_data($config = [], $view) {
-        $loaded_view = $this->instance->load->view($view, null, true);
+    function load_data($config = [], $data = [], $view) {
+        $loaded_view = $this->instance->load->view($view, $data, true);
         $data = $this->check_matching_bracket($loaded_view, $config);
         return $this->instance->parser->parse($view, $data, true);
     }
